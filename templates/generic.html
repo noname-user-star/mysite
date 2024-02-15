@@ -1,45 +1,56 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <html>
+  <head>
+    <title>Web-book | Pagessdfsdf</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/cat.ico') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <style id="inverter" media="none">
+      html {
+        background-color: #eee;
+        filter: invert(100%);
+      }
 
-<head>
-	<title>Web-book | Pages</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<link rel="shortcut icon" href="{{ url_for('static', filename='images/cat.ico') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<style id="inverter" media="none">
-		html {
-			background-color: #eee;
-			filter: invert(100%)
-		}
+      * {
+        background-color: inherit;
+      }
 
-		* {
-			background-color: inherit
-		}
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+  </head>
 
-		img:not([src*=".svg"]),
-		[style*="url("] {
-			filter: invert(100%)
-		}
-	</style>
-</head>
-
-<body class="is-preload">
-
-	<!-- Содержание страницы -->
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-
-				<!-- Header -->
-				<header id="header">
-					<!-- <ul class="icons">
+  <body class="is-preload">
+    <!-- Содержание страницы -->
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <!-- Header -->
+          <header id="header">
+            <!-- <ul class="icons">
 						<li><a href="https://t.me/dozyawa" class="icon brands fa-telegram"><span
 									class="label">Telegram</span></a></li>
 						<li><a href="https://vk.com/pavlpku" class="icon brands fa-vk"><span
@@ -47,126 +58,180 @@
 						<li><a href="https://www.instagram.com/pavlpku/" class="icon brands fa-instagram"><span
 									class="label">Instagram</span></a></li>
 					</ul> -->
-				</header>
+          </header>
 
-				<!-- context -->
-				<section id="swup" class="transition-fade">
-					<header class="main">
-					</header>
-					<section id="mytheme" name="mytheme">
-						{{ context|safe }}
-					</section>
-				</section>
-			</div>
-		</div>
+          <!-- context -->
+          <section id="swup" class="transition-fade">
+            <header class="main"></header>
+            <section id="mytheme" name="mytheme">{{ context|safe }}</section>
+          </section>
+        </div>
+      </div>
 
-		<!-- Sidebar -->
-		<div id="sidebar">
-			<div class="inner">
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Меню</h2>
+            </header>
+            <ul>
+              <li><a href="{{ url_for('index') }}">Главная</a></li>
+              <li>
+                <span class="opener">Раздел 1</span>
+                <ul>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=1) }}"
+                      >Тема 1. Теория и понятие политической власти</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=2) }}"
+                      >Тема 2. Сущность политической системы и политический
+                      режим</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=3) }}"
+                      >Тема 3. Государство и его основные признаки</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=4) }}"
+                      >Тема 4. Политические партии и партийные системы</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=5) }}"
+                      >Тема 5. Политическая элита, политическое лидерство</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=6) }}"
+                      >Тема 6. Международные отношения и внешняя политика, как
+                      категории политической науки. Геополитика</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=7) }}"
+                      >Тема 7. Социология - наука об обществе</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Раздел 2</span>
+                <ul>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=8) }}"
+                      >Тема 1. Политическая система Республики Казахстан</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=9) }}"
+                      >Тема 2. Избирательная система Республики Казахстан.
+                      Определение взаимоотношений между Парламентом и
+                      Правительством.</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=10) }}"
+                      >Тема 3. Политическая культура РК</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=11) }}"
+                      >Тема 4. Особенности политической социализации в
+                      Казахстане: роль традиции и СМИ</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('generic_theme', id=12) }}"
+                      >Тема 5. Проблемы разработки внешнеполитической стратегии
+                      Республики Казахстан</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li></li>
+            </ul>
+            <ul>
+              <li>
+                <span class="opener">Функции</span>
+                <ul>
+                  <label class="button-theme">
+                    <input type="checkbox" id="themer" />
+                    Темная тема: <span aria-hidden="true"></span>
+                  </label>
+                </ul>
+              </li>
+            </ul>
+          </nav>
 
-				<!-- Menu -->
-				<nav id="menu">
-					<header class="major">
-						<h2>Меню</h2>
-					</header>
-					<ul>
-						<li><a href="{{ url_for('index') }}">Главная</a></li>
-						<li>
-							<span class="opener">Раздел 1</span>
-							<ul>
-								<li><a href="{{ url_for('generic_theme', id=1) }}">Тема 1. Теория и понятие политической
-										власти</a></li>
-								<li><a href="{{ url_for('generic_theme', id=2) }}">Тема 2. Сущность политической системы
-										и политический режим</a></li>
-								<li><a href="{{ url_for('generic_theme', id=3) }}">Тема 3. Государство и его основные
-										признаки</a></li>
-								<li><a href="{{ url_for('generic_theme', id=4) }}">Тема 4. Политические партии и
-										партийные системы</a></li>
-								<li><a href="{{ url_for('generic_theme', id=5) }}">Тема 5. Политическая элита,
-										политическое лидерство</a></li>
-								<li><a href="{{ url_for('generic_theme', id=6) }}">Тема 6. Международные отношения и
-										внешняя политика, как категории политической науки. Геополитика</a></li>
-								<li><a href="{{ url_for('generic_theme', id=7) }}">Тема 7. Социология - наука об
-										обществе</a></li>
-							</ul>
-						</li>
-						<li>
-							<span class="opener">Раздел 2</span>
-							<ul>
-								<li><a href="{{ url_for('generic_theme', id=8) }}">Тема 1. Политическая система
-										Республики Казахстан</a></li>
-								<li><a href="{{ url_for('generic_theme', id=9) }}">Тема 2. Избирательная система
-										Республики Казахстан. Определение взаимоотношений между Парламентом и
-										Правительством.</a></li>
-								<li><a href="{{ url_for('generic_theme', id=10) }}">Тема 3. Политическая культура РК</a>
-								</li>
-								<li><a href="{{ url_for('generic_theme', id=11) }}">Тема 4. Особенности политической
-										социализации в Казахстане: роль традиции и СМИ</a></li>
-								<li><a href="{{ url_for('generic_theme', id=12) }}">Тема 5. Проблемы разработки
-										внешнеполитической стратегии Республики Казахстан</a></li>
-							</ul>
-						</li>
-						<li></li>
-					</ul>
-					<ul>
-						<li>
-							<span class="opener">Функции</span>
-							<ul>
-								<label class="button-theme">
-									<input type="checkbox" id="themer">
-									Темная тема: <span aria-hidden="true"></span>
-								</label>
-							</ul>
-						</li>
-					</ul>
-				</nav>
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>Алан Тьюринг</h2>
+            </header>
+            <div class="mini-posts">
+              <article>
+                <a class="image"
+                  ><img
+                    src="{{ url_for('static', filename='images/alan-turing.jpg') }}"
+                    alt=""
+                /></a>
+                <p>
+                  А́лан Мэ́тисон Тью́ринг (1912 — 1954) — английский математик,
+                  логик, криптограф, создатель «Машины Тьюринга». Во время
+                  Второй мировой войны Алан Тьюринг разработал машину,
+                  использованную для взлома немецкого шифратора «Enigma».
+                </p>
+              </article>
+            </div>
+            <header class="major">
+              <h2>Уитфилд Диффи</h2>
+            </header>
+            <div class="mini-posts">
+              <article>
+                <a class="image"
+                  ><img
+                    src="{{ url_for('static', filename='images/Diffie_Royal.jpg') }}"
+                    alt=""
+                /></a>
+                <p>
+                  Бе́йли Уи́тфилд Ди́ффи (1944) — один из самых известных
+                  американских криптографов, заслуживший мировую известность за
+                  концепцию криптографии с открытым ключом. В 1975 году Диффи,
+                  Хеллман и Меркл начали работать над концепцией шифрования с
+                  открытым ключом.
+                </p>
+              </article>
+            </div>
+            <header class="major">
+              <h2>Мартин Хеллман</h2>
+            </header>
+            <div class="mini-posts">
+              <article>
+                <a class="image"
+                  ><img
+                    src="{{ url_for('static', filename='images/martin-hellman.jpeg') }}"
+                    alt=""
+                /></a>
+                <p>
+                  Ма́ртин Э́двард Хе́ллман (1945) — американский криптограф.
+                  Получил известность благодаря разработке первой асимметричной
+                  криптосистемы в соавторстве с Уитфилдом Диффи и Ральфом
+                  Мерклем (1976). Один из активных сторонников либерализации в
+                  сфере криптографии. Хеллман долгое время являлся участником
+                  конференции компьютерной конфиденциальности, в последнее время
+                  работает над анализом рисков ядерной угрозы.
+                </p>
+              </article>
+            </div>
+          </section>
 
-				<!-- Section -->
-				<section>
-					<header class="major">
-						<h2>Алан Тьюринг</h2>
-					</header>
-					<div class="mini-posts">
-						<article>
-							<a class="image"><img src="{{ url_for('static', filename='images/alan-turing.jpg') }}"
-									alt="" /></a>
-							<p>А́лан Мэ́тисон Тью́ринг (1912 — 1954) — английский математик,
-								логик, криптограф, создатель «Машины Тьюринга». Во время Второй мировой войны Алан
-								Тьюринг разработал машину, использованную для взлома немецкого шифратора «Enigma».</p>
-						</article>
-					</div>
-					<header class="major">
-						<h2>Уитфилд Диффи</h2>
-					</header>
-					<div class="mini-posts">
-						<article>
-							<a class="image"><img src="{{ url_for('static', filename='images/Diffie_Royal.jpg') }}"
-									alt="" /></a>
-							<p>Бе́йли Уи́тфилд Ди́ффи (1944) — один из самых
-								известных американских криптографов, заслуживший мировую известность за концепцию
-								криптографии с открытым ключом. В 1975 году Диффи, Хеллман и Меркл начали работать над
-								концепцией шифрования с открытым ключом.</p>
-						</article>
-					</div>
-					<header class="major">
-						<h2>Мартин Хеллман</h2>
-					</header>
-					<div class="mini-posts">
-						<article>
-							<a class="image"><img src="{{ url_for('static', filename='images/martin-hellman.jpeg') }}"
-									alt="" /></a>
-							<p>Ма́ртин Э́двард Хе́ллман (1945) — американский криптограф.
-								Получил известность благодаря разработке первой асимметричной криптосистемы в
-								соавторстве с Уитфилдом Диффи и Ральфом
-								Мерклем (1976). Один из активных сторонников либерализации в сфере криптографии. Хеллман
-								долгое время являлся участником
-								конференции компьютерной конфиденциальности, в последнее время работает над анализом
-								рисков ядерной угрозы.</p>
-						</article>
-					</div>
-				</section>
-
-				<!-- Section
+          <!-- Section
 						<section>
 							<header class="major">
 								<h2>Контакты</h2>
@@ -180,52 +245,63 @@
 							</ul>
 						</section> -->
 
-				<!-- Footer -->
-				<footer id="footer">
-					<p class="copyright">&copy; Web-book. Все права защищены.</p>
-				</footer>
-			</div>
-		</div>
-	</div>
+          <!-- Footer -->
+          <footer id="footer">
+            <p class="copyright">&copy; Web-book. Все права защищены.</p>
+          </footer>
+        </div>
+      </div>
+    </div>
 
-	<!-- Scripts -->
-	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/util.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-	<a class="scrollup" style="width:32px;height:32px;opacity:80%;position:fixed;bottom:50px;
-					right:20px;display:none;text-indent:-9999px;background: url(../static/images/up-arrow2.png) no-repeat;
-					border-color: transparent;border-radius: 50%;cursor:pointer;"></a>
-	<script type="text/javascript">
-		$(document).ready(function () {
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <a
+      class="scrollup"
+      style="
+        width: 32px;
+        height: 32px;
+        opacity: 80%;
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+        display: none;
+        text-indent: -9999px;
+        background: url(../static/images/up-arrow2.png) no-repeat;
+        border-color: transparent;
+        border-radius: 50%;
+        cursor: pointer;
+      "
+    ></a>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $(".scrollup").fadeIn();
+          } else {
+            $(".scrollup").fadeOut();
+          }
+        });
 
-			$(window).scroll(function () {
-				if ($(this).scrollTop() > 100) {
-					$('.scrollup').fadeIn();
-				} else {
-					$('.scrollup').fadeOut();
-				}
-			});
+        $(".scrollup").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 600);
+          return false;
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      var checkbox = document.getElementById("themer");
+      var invertor = document.getElementById("inverter");
 
-			$('.scrollup').click(function () {
-				$("html, body").animate({ scrollTop: 0 }, 600);
-				return false;
-			});
-
-		});
-	</script>
-	<script type="text/javascript">
-		var checkbox = document.getElementById('themer');
-		var invertor = document.getElementById('inverter');
-
-		checkbox.addEventListener('change', function () {
-			// Triggers repaint in most browsers:
-			invertor.setAttribute('media', this.checked ? 'screen' : 'none');
-			// Forces repaint in Chrome:
-			invertor.textContent = invertor.textContent.trim();
-		});
-	</script>
-</body>
-
+      checkbox.addEventListener("change", function () {
+        // Triggers repaint in most browsers:
+        invertor.setAttribute("media", this.checked ? "screen" : "none");
+        // Forces repaint in Chrome:
+        invertor.textContent = invertor.textContent.trim();
+      });
+    </script>
+  </body>
 </html>
