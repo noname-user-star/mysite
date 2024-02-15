@@ -19,7 +19,7 @@ def generic_theme(id):
     filepath = os.path.join(__location__, f"theme_{int(id)}.txt")
     with open(filepath, mode="r+", encoding="utf-8") as file:
         content = file.read()
-    return render_template("generic.html", context=content)
+    return render_template("generic.html", context=contentdfg)
 
 if __name__ == "__main__":
     app.run()
